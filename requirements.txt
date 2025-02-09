@@ -1,0 +1,26 @@
+# TensorFlow and Keras
+tensorflow
+
+# PyTorch and Hugging Face Transformers
+torch
+transformers
+
+# Image Processing and Data Science
+numpy
+pandas
+matplotlib
+seaborn
+pillow
+opencv-python
+
+# Scikit-Learn Utilities
+scikit-learn
+
+# Google Colab Specific
+google-colab
+
+# Segment Anything Model (SAM)
+git+https://github.com/facebookresearch/segment-anything.git
+
+# Additional Dependencies
+zipfile36
