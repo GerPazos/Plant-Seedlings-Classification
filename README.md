@@ -97,16 +97,17 @@ To improve performance, I experimented with **pre-trained models**.
 #### EfficientNetB0
 - Optimized for **accuracy vs. computation trade-off**.
 - Fine-tuned the **last 50 layers** while freezing the rest.
-- **Did not converge well (~11% accuracy)** → Abandoned.
+- **Did not converge well (~13% accuracy)** → Abandoned.
 
 #### VGG19
 - **Deeper network with strong feature extraction**.
-- **Trained with additional dense layers & Dropout**.
-- **Achieved ~91% accuracy**, making it the best-performing model.
+- **Trained with additional dense layers, Batch Normalization & Dropout**.
+- **Achieved ~92.29% validation accuracy**, making it the best-performing model.
 
 #### Fine-Tuning VGG19
-- Unfroze **last 5 layers** and applied **a lower learning rate (1e-6)**.
-- **Final accuracy: 91%** on Kaggle.
+- Unfroze **last 25 layers** and applied **a lower learning rate (5e-7)**.
+- **Final accuracy: 93.88%** on validation set.
+
 
 ---
 
@@ -123,7 +124,6 @@ Since removing background **could improve classification**, I tested **SAM** and
 - **More refined than SAM, but still had segmentation inconsistencies**.
 
 **Classification Results After Segmentation**:
-- **VGG19 on raw images**: **91% accuracy**
 - **VGG19 on segmented images**: **86% accuracy**
 - **Unexpectedly, segmentation reduced accuracy**, likely due to loss of key features.
 
@@ -149,7 +149,7 @@ Since removing background **could improve classification**, I tested **SAM** and
 ---
 
 ## Conclusions
-- **VGG19** performed best, achieving **91% accuracy** on Kaggle.
+- **VGG19** performed best, achieving **93% accuracy** on Kaggle.
 - **Zero-Shot Segmentation unexpectedly reduced accuracy**, but refining segmentation could help.
 - **Future improvements**:
   - Better segmentation masks.
