@@ -72,16 +72,22 @@ The dataset consists of:
 ## Model Development
 
 ### Baseline CNN Model
-The first approach was training a **custom CNN from scratch** with:
-- **Three convolutional layers** (32, 64, 128 filters).
-- **Batch Normalization and Dropout** to improve generalization.
-- **Categorical Crossentropy loss** for multi-class classification.
-- **Adam optimizer** with an initial learning rate of 0.0001.
+The first approach was training a **custom CNN from scratch** with:  
+- **Four convolutional layers** (32, 64, 128, 256 filters).  
+- **Batch Normalization and Dropout** to improve generalization.  
+- **L2 regularization** to reduce overfitting.  
+- **Categorical Crossentropy loss** for multi-class classification.  
+- **Adam optimizer** with an initial learning rate of **0.001**.  
 
-**Results**:
-- Training accuracy: **~75%**
-- Validation accuracy: **~62%**
-- **Conclusion:** The CNN worked but needed improvement.
+#### Results:
+- **Initial Training Accuracy:** **~82%**  
+- **Initial Validation Accuracy:** **~86%**  
+- **After Fine-Tuning:**  
+  - **Training Accuracy:** **~89%**  
+  - **Validation Accuracy:** **~90%**  
+
+### Conclusion:
+The CNN significantly improved after increasing depth, adding regularization, and applying fine-tuning. However, exploring **transfer learning** with pre-trained models could yield even better results.
 
 ---
 
